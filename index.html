@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đồng Đò movement plan</title>
+<style>
+:root{font:16px/1.5 system-ui,sans-serif;color:#142e2b;background:#f7f8f2;--rule:#c9d5cd;--ink:#142e2b;--muted:#435d55;--green:#164d40;--light:#e5eee5}
+*{box-sizing:border-box}body{margin:0}a{color:var(--green);text-underline-offset:.2em}button,select{font:inherit;color:inherit}button,select,a{touch-action:manipulation}:focus-visible{outline:3px solid #a34b0c;outline-offset:3px}header{border-bottom:1px solid var(--rule)}.shell{max-width:1190px;margin:auto;padding-inline:clamp(16px,4vw,52px)}header .shell{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;padding-block:10px}.brand{font-weight:750}nav{display:flex;gap:5px}nav a{padding:8px 12px;text-decoration:none;border-radius:6px}nav a[aria-current]{background:var(--green);color:white}main{padding-block:clamp(26px,5vw,58px) 56px}h1,h2,h3,p{margin:0}h1{font-size:clamp(2.25rem,6vw,4.6rem);font-weight:730;line-height:1.04;letter-spacing:-.04em}h2{font-size:1.35rem;letter-spacing:-.025em}h3{font-size:1.05rem}.subtitle,.note{color:var(--muted);margin-top:8px}.verdict{background:var(--light);padding:15px 18px;border-radius:12px;margin-block:22px;max-width:76ch}.verdict strong{margin-right:6px}.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:start}figure{margin:0}.map{height:430px;width:100%;border:1px solid var(--rule);border-radius:14px;background:#e5eee5;display:block}figcaption{font-size:.88rem;color:var(--muted);margin-top:8px}.controls{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 10px}.controls label{display:grid;gap:4px;font-size:.88rem;font-weight:650}.controls select{max-width:100%;min-height:42px;border:1px solid var(--rule);background:#fff;border-radius:6px;padding:6px 8px}.mapline{margin-bottom:8px;font-size:.9rem}.mapline a{margin-left:8px}.summary{display:flex;flex-wrap:wrap;gap:8px 18px;margin:12px 0;font-size:.9rem}.summary strong{font-variant-numeric:tabular-nums}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{padding:10px 8px;border-bottom:1px solid var(--rule);vertical-align:top;text-align:left}thead th{font-size:.78rem;color:var(--muted)}td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}tbody tr[data-active]{background:var(--light)}tfoot{font-weight:700}.note{font-size:.87rem;margin-top:16px;max-width:76ch}.groups{margin:10px 0 14px;padding-left:20px;font-size:.9rem}.groups li+li{margin-top:5px}
+.group-a{--group:#185b4b;--group-bg:#e1efe7}.group-b{--group:#764218;--group-bg:#f5e8d8}
+tr.group-a,tr.group-b{background:var(--group-bg)}
+tbody tr[data-active]{outline:2px solid var(--group,var(--green));outline-offset:-2px}
+.group-name{color:var(--group);font-weight:650}
+.groups li::marker{color:var(--group,var(--green))}
+figure.group-a .map,figure.group-b .map{border:2px solid var(--group)}
+.map-group{color:var(--group,var(--muted));font-size:.88rem;font-weight:650}[hidden]{display:none!important}@media(max-width:850px){.layout{grid-template-columns:1fr}.map{height:360px}}@media(max-width:440px){.map{height:320px}.controls label{max-width:100%}th,td{padding:8px 5px}}
+</style>
+</head>
+<body>
+<header><div class="shell"><span class="brand">Hanoi → Hill Camping</span></div></header>
+<main class="shell">
+<h1>Đồng Đò movement plan</h1>
+<p class="subtitle">9 riders · Regroup at Mixue Nhật Tân · <a href="https://maps.app.goo.gl/LgR7MTXsToRQPjv38">Hill Camping, Đồng Đò</a></p>
+<nav aria-label="Group guides" style="margin-top:18px">
+<a id="lotte-tab" href="#lotte">Lotte Mall group (7)</a>
+<a id="viet-hung-tab" href="#viet-hung">Việt Hưng pair (2)</a>
+</nav>
+<section class="verdict group-a" id="lotte-guide" aria-labelledby="lotte-heading">
+<h2 id="lotte-heading">Lotte Mall group guide</h2>
+<ol>
+<li><strong>Meet at Lotte Mall West Lake first.</strong> Nam Dư (1), Chùa Láng (3), Nguyễn Trãi (2), and Lạc Trung (1) wait until all seven are together. <a id="lotte-pin" target="_blank" rel="noopener">Open meetup pin</a></li>
+<li><strong>Ride 5.2 km together to Mixue Nhật Tân.</strong> Meet the Việt Hưng pair there. <a id="lotte-to-mixue" target="_blank" rel="noopener">Directions from Lotte Mall</a></li>
+<li><strong>Leave with all nine riders.</strong> Ride 28.8 km from Mixue to Hill Camping. <a class="final-leg" target="_blank" rel="noopener">Directions to Hill Camping</a></li>
+</ol>
+</section>
+<section class="verdict group-b" id="viet-hung-guide" aria-labelledby="viet-hung-heading" hidden>
+<h2 id="viet-hung-heading">Việt Hưng pair guide</h2>
+<ol>
+<li><strong>Leave together from 95 Việt Hưng.</strong> Ride 12.5 km to Mixue Nhật Tân. <a id="viet-hung-to-mixue" target="_blank" rel="noopener">Directions from Việt Hưng</a></li>
+<li><strong>Meet the seven riders from Lotte Mall at Mixue.</strong> Wait there until all nine are together.</li>
+<li><strong>Ride the final 28.8 km together</strong> to Hill Camping. <a class="final-leg" target="_blank" rel="noopener">Directions to Hill Camping</a></li>
+</ol>
+</section>
+<p class="note" style="margin-bottom:20px"><strong>Final meetup:</strong> <a id="mixue-pin" target="_blank" rel="noopener">Mixue Nhật Tân, 139 Ngọc Chi, Vĩnh Thanh, Hà Nội 10000, Vietnam</a></p>
+<div class="layout">
+<figure id="route-figure">
+<h2>Google Maps routes</h2>
+<p id="map-group" class="map-group"></p>
+<div class="controls">
+<label>Starting point<select id="rider"></select></label>
+<label>Display route<select id="leg"><option value="full">Full ride via meetup</option><option value="first">Start to meetup</option><option value="shared">Meetup to Hill Camping</option></select></label>
+</div>
+<p class="mapline"><strong id="distance"></strong><a id="directions" target="_blank" rel="noopener">Open in Google Maps</a></p>
+<iframe class="map" id="map" title="Selected Google Maps driving route" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<figcaption>Choose a starting point to see its assigned route. The live map may show a different driving alternative.</figcaption>
+</figure>
+<section aria-labelledby="table-title">
+<h2 id="table-title">Distances by starting point</h2>
+<div id="stats" class="summary"></div>
+<div class="scroll"><table>
+<thead><tr><th scope="col">Starting point</th><th scope="col">People</th><th scope="col">To meetup</th><th scope="col">Full ride</th><th scope="col">Δ vs. direct</th></tr></thead>
+<tbody id="rows"></tbody>
+<tfoot><tr><th scope="row" colspan="2">Average per person</th><td id="avg-first" class="num"></td><td id="avg-full" class="num"></td><td id="avg-delta" class="num"></td></tr></tfoot>
+</table></div>
+<p class="note">Based on the shortest Google Maps driving alternatives displayed for each measured leg. Δ is the full ride minus the direct ride. A plus means extra distance. A minus means the measured trip via the meetup was shorter than the direct alternatives recorded. The Nam Dư direct baseline is the 48.0 km you supplied. Parking at the meetup pins is unverified.</p>
+</section>
+</div>
+</main>
+<script>
+const starts = [
+  ['177 Nam Dư', '20.98355254308802,105.88726721529495', 1],
+  ['91 Chùa Láng', '21.023402054858224,105.80588880572233', 3],
+  ['72 Nguyễn Trãi', '21.003184896665996,105.8154427668017', 2],
+  ['19 Lạc Trung', '21.002890396010084,105.8622584711343', 1],
+  ['95 Việt Hưng', '21.052604827628436,105.90191816971985', 2]
+];
+const directKm = [48.0, 39.4, 43.3, 44.8, 40.2];
+const destination = '21.313724,105.7735029';
+const northRegroup = 'Mixue Nhật Tân, 139 Ngọc Chi, Vĩnh Thanh, Hà Nội 10000, Vietnam';
+const northToDam = 28.8;
+const places = {
+  lotteFirst: ['Lotte Mall West Lake', 'LOTTE Mall West Lake Hanoi', 5.2 + northToDam, [16.3,6.8,11.9,12.5]],
+  regroup: ['Mixue Nhật Tân', northRegroup, northToDam, [0,0,0,0,12.5]]
+};
+const plan = ['lotteFirst','lotteFirst','lotteFirst','lotteFirst','regroup'];
+const $ = id => document.getElementById(id);
+const km = n => n.toFixed(1) + ' km';
+const signedKm = n => {
+  const rounded = Math.round(n * 10) / 10;
+  return (rounded > 0 ? '+' : rounded < 0 ? '−' : '') + km(Math.abs(rounded));
+};
+const groupIndices = () => location.hash === '#viet-hung' ? [4] : [0,1,2,3];
+const directions = (from, to) => 'https://www.google.com/maps/dir/?' +
+  new URLSearchParams({api:'1',origin:from,destination:to,travelmode:'driving'});
+const searchPin = value => 'https://www.google.com/maps/search/?' + new URLSearchParams({api:'1',query:value});
+$('lotte-pin').href = searchPin(places.lotteFirst[1]);
+$('mixue-pin').href = searchPin(northRegroup);
+$('lotte-to-mixue').href = directions(places.lotteFirst[1], northRegroup);
+$('viet-hung-to-mixue').href = directions(starts[4][1], northRegroup);
+document.querySelectorAll('.final-leg').forEach(link => link.href = directions(northRegroup, destination));
+
+function showGroup() {
+  const ids = groupIndices();
+  const pair = ids.length === 1;
+  $('lotte-guide').hidden = pair;
+  $('viet-hung-guide').hidden = !pair;
+  $('lotte-tab').removeAttribute('aria-current');
+  $('viet-hung-tab').removeAttribute('aria-current');
+  $(pair ? 'viet-hung-tab' : 'lotte-tab').setAttribute('aria-current','page');
+  $('rider').replaceChildren(...ids.map(i => new Option(starts[i][0], i)));
+  render();
+}
+
+function mapRoute(place, i) {
+  const [, pin, onward, approaches] = place;
+  const staged = place === places.lotteFirst;
+  const leg = $('leg').value;
+  const from = leg === 'shared' ? (staged ? northRegroup : pin) : starts[i][1];
+  const to = leg === 'first' ? pin : destination;
+  const waypoints = leg === 'full' ? (staged ? [pin, northRegroup] : [pin]) : [];
+  const distance = leg === 'shared' ? (staged ? northToDam : onward) :
+    approaches[i] + (leg === 'full' ? onward : 0);
+  const link = new URL('https://www.google.com/maps/dir/');
+  link.search = new URLSearchParams({api:'1', origin:from, destination:to, travelmode:'driving'});
+  if (waypoints.length) link.searchParams.set('waypoints', waypoints.join('|'));
+  $('directions').href = link.href;
+  const embed = new URL('https://maps.google.com/maps');
+  embed.search = new URLSearchParams({saddr:from,daddr:[...waypoints,to].join(' to:'),dirflg:'d',output:'embed'});
+  if ($('map').getAttribute('src') !== embed.href) $('map').src = embed.href;
+  $('distance').textContent = 'Measured ' + km(distance);
+}
+
+function render() {
+  const ids = groupIndices();
+  const rider = Number($('rider').value);
+  const people = ids.reduce((sum, i) => sum + starts[i][2], 0);
+  const weighted = values => ids.reduce((sum, i) => sum + values[i] * starts[i][2], 0);
+  const groupClass = key => key === 'lotteFirst' ? 'group-a' : 'group-b';
+  $('route-figure').className = groupClass(plan[rider]);
+  $('map-group').textContent = plan[rider] === 'lotteFirst'
+    ? 'Lotte Mall group · via Lotte Mall and Mixue Nhật Tân'
+    : 'Việt Hưng group · via Mixue Nhật Tân';
+  const approaches = plan.map((key,i) => places[key][3][i]);
+  const totals = plan.map((key,i) => approaches[i] + places[key][2]);
+  const deltas = totals.map((total, i) => total - directKm[i]);
+  $('stats').innerHTML = '<span><strong>' + km(weighted(totals)/people) + '</strong> average full ride</span><span><strong>' +
+    km(Math.max(...ids.map(i => approaches[i]))) + '</strong> longest approach</span>';
+  $('rows').innerHTML = ids.map(i => {
+    const [name,,count] = starts[i];
+    const key = plan[i];
+    return '<tr class="' + groupClass(key) + '"' + (i === rider ? ' data-active' : '') +
+      '><th scope="row">' + name + '<br><small class="group-name">' + places[key][0] + '</small>' +
+      '</th><td class="num">' + count + '</td><td class="num">' + km(approaches[i]) +
+      '</td><td class="num">' + km(totals[i]) + '</td><td class="num">' + signedKm(deltas[i]) + '</td></tr>';
+  }).join('');
+  $('avg-first').textContent = km(weighted(approaches)/people);
+  $('avg-full').textContent = km(weighted(totals)/people);
+  $('avg-delta').textContent = signedKm(weighted(deltas)/people);
+  mapRoute(places[plan[rider]], rider);
+}
+['rider','leg'].forEach(id => $(id).addEventListener('change', render));
+window.addEventListener('hashchange', showGroup);
+showGroup();
+</script>
+</body>
+</html>
