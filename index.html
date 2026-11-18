@@ -14,6 +14,11 @@ tbody tr[data-active]{outline:2px solid var(--group,var(--green));outline-offset
 .groups li::marker{color:var(--group,var(--green))}
 figure.group-a .map,figure.group-b .map{border:2px solid var(--group)}
 .map-group{color:var(--group,var(--muted));font-size:.88rem;font-weight:650}[hidden]{display:none!important}@media(max-width:850px){.layout{grid-template-columns:1fr}.map{height:360px}}@media(max-width:440px){.map{height:320px}.controls label{max-width:100%}th,td{padding:8px 5px}}
+.masterplan{margin-top:clamp(32px,6vw,64px);padding-top:22px;border-top:1px solid var(--rule)}
+.masterplan-bar{display:flex;align-items:center;justify-content:space-between;gap:10px 20px;flex-wrap:wrap;margin-bottom:14px}
+.masterplan-edit{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:6px;background:var(--green);color:white;font-weight:650;text-decoration:none}
+.masterplan-edit:hover{text-decoration:underline}
+.masterplan-sheet{display:block;width:100%;height:clamp(380px,70vh,780px);border:1px solid var(--rule);border-radius:12px;background:white}
 </style>
 </head>
 <body>
@@ -65,6 +70,16 @@ figure.group-a .map,figure.group-b .map{border:2px solid var(--group)}
 <p class="note">Based on the shortest Google Maps driving alternatives displayed for each measured leg. Δ is the full ride minus the direct ride. A plus means extra distance. A minus means the measured trip via the meetup was shorter than the direct alternatives recorded. The Nam Dư direct baseline is the 48.0 km you supplied. Parking at the meetup pins is unverified.</p>
 </section>
 </div>
+<section class="masterplan" id="masterplan" aria-labelledby="masterplan-title">
+<div class="masterplan-bar">
+<div>
+<h2 id="masterplan-title">Trip masterplan</h2>
+<p class="subtitle">Edit the shared plan in Google Sheets with an account that has edit access.</p>
+</div>
+<a class="masterplan-edit" href="https://docs.google.com/spreadsheets/d/1-FbyPUN1QEci1CWW0E1h0565eolkQ8e5xif8rW1evS0/edit?gid=1578086861#gid=1578086861" target="_blank" rel="noopener">Edit in Google Sheets ↗</a>
+</div>
+<iframe class="masterplan-sheet" title="Đồng Đò trip masterplan spreadsheet" src="https://docs.google.com/spreadsheets/d/1-FbyPUN1QEci1CWW0E1h0565eolkQ8e5xif8rW1evS0/preview?gid=1578086861#gid=1578086861" loading="lazy"></iframe>
+</section>
 </main>
 <script>
 const starts = [
