@@ -14,17 +14,32 @@ tbody tr[data-active]{outline:2px solid var(--group,var(--green));outline-offset
 .groups li::marker{color:var(--group,var(--green))}
 figure.group-a .map,figure.group-b .map{border:2px solid var(--group)}
 .map-group{color:var(--group,var(--muted));font-size:.88rem;font-weight:650}[hidden]{display:none!important}@media(max-width:850px){.layout{grid-template-columns:1fr}.map{height:360px}}@media(max-width:440px){.map{height:320px}.controls label{max-width:100%}th,td{padding:8px 5px}}
-.masterplan{margin-top:clamp(32px,6vw,64px);padding-top:22px;border-top:1px solid var(--rule)}
-.masterplan-bar{display:flex;align-items:center;justify-content:space-between;gap:10px 20px;flex-wrap:wrap;margin-bottom:14px}
+.plan-nav a{display:flex;align-items:center;min-height:44px;font-weight:650;white-space:nowrap}
+.plan-nav a:not([aria-current]):hover{background:var(--light)}
+.masterplan-bar{display:flex;justify-content:flex-end;margin-bottom:12px}
+@media(max-width:520px){header .shell{gap:8px}.plan-nav{width:100%}.masterplan-bar{justify-content:flex-start}}
 .masterplan-edit{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:6px;background:var(--green);color:white;font-weight:650;text-decoration:none}
 .masterplan-edit:hover{text-decoration:underline}
-.masterplan-sheet{display:block;width:100%;height:clamp(380px,70vh,780px);border:1px solid var(--rule);border-radius:12px;background:white}
+.masterplan-sheet{display:block;width:100%;height:clamp(380px,74dvh,1000px);border:1px solid var(--rule);border-radius:12px;background:white}
 </style>
 </head>
 <body>
-<header><div class="shell"><span class="brand">Hanoi → Hill Camping</span></div></header>
+<header>
+<div class="shell">
+<span class="brand">Hanoi → Hill Camping</span>
+<nav class="plan-nav" aria-label="Trip plans">
+<a id="masterplan-link" href="#masterplan" aria-current="page">Masterplan</a>
+<a id="movement-link" href="#movement">Movement plan</a>
+</nav>
+</div>
+</header>
 <main class="shell">
-<h1>Đồng Đò movement plan</h1>
+<section class="masterplan" id="masterplan" aria-label="Trip masterplan">
+<div class="masterplan-bar"><a class="masterplan-edit" href="https://docs.google.com/spreadsheets/d/1-FbyPUN1QEci1CWW0E1h0565eolkQ8e5xif8rW1evS0/edit?gid=1578086861#gid=1578086861" target="_blank" rel="noopener">Edit in Google Sheets</a></div>
+<iframe class="masterplan-sheet" title="Đồng Đò trip masterplan spreadsheet" src="https://docs.google.com/spreadsheets/d/1-FbyPUN1QEci1CWW0E1h0565eolkQ8e5xif8rW1evS0/preview?gid=1578086861#gid=1578086861" loading="lazy"></iframe>
+</section>
+<section id="movement" aria-labelledby="movement-title" hidden>
+<h1 id="movement-title">Đồng Đò movement plan</h1>
 <p class="subtitle">9 riders · Regroup at Mixue Nhật Tân · <a href="https://maps.app.goo.gl/LgR7MTXsToRQPjv38">Hill Camping, Đồng Đò</a></p>
 <nav aria-label="Group guides" style="margin-top:18px">
 <a id="lotte-tab" href="#lotte">Lotte Mall group (7)</a>
@@ -70,15 +85,6 @@ figure.group-a .map,figure.group-b .map{border:2px solid var(--group)}
 <p class="note">Based on the shortest Google Maps driving alternatives displayed for each measured leg. Δ is the full ride minus the direct ride. A plus means extra distance. A minus means the measured trip via the meetup was shorter than the direct alternatives recorded. The Nam Dư direct baseline is the 48.0 km you supplied. Parking at the meetup pins is unverified.</p>
 </section>
 </div>
-<section class="masterplan" id="masterplan" aria-labelledby="masterplan-title">
-<div class="masterplan-bar">
-<div>
-<h2 id="masterplan-title">Trip masterplan</h2>
-<p class="subtitle">Edit the shared plan in Google Sheets with an account that has edit access.</p>
-</div>
-<a class="masterplan-edit" href="https://docs.google.com/spreadsheets/d/1-FbyPUN1QEci1CWW0E1h0565eolkQ8e5xif8rW1evS0/edit?gid=1578086861#gid=1578086861" target="_blank" rel="noopener">Edit in Google Sheets ↗</a>
-</div>
-<iframe class="masterplan-sheet" title="Đồng Đò trip masterplan spreadsheet" src="https://docs.google.com/spreadsheets/d/1-FbyPUN1QEci1CWW0E1h0565eolkQ8e5xif8rW1evS0/preview?gid=1578086861#gid=1578086861" loading="lazy"></iframe>
 </section>
 </main>
 <script>
@@ -174,8 +180,27 @@ function render() {
   mapRoute(places[plan[rider]], rider);
 }
 ['rider','leg'].forEach(id => $(id).addEventListener('change', render));
-window.addEventListener('hashchange', showGroup);
-showGroup();
+let activeGroup;
+function showPlan() {
+  const hash = location.hash;
+  const movement = ['#movement', '#lotte', '#viet-hung'].includes(hash);
+  $('masterplan').hidden = movement;
+  $('movement').hidden = !movement;
+  $('masterplan-link').removeAttribute('aria-current');
+  $('movement-link').removeAttribute('aria-current');
+  $(movement ? 'movement-link' : 'masterplan-link').setAttribute('aria-current', 'page');
+  if (hash === '#masterplan' || hash === '#movement') window.scrollTo(0, 0);
+  if (!movement) return;
+
+  const group = hash === '#viet-hung' ? '#viet-hung' : '#lotte';
+  $('movement-link').href = group === '#viet-hung' ? group : '#movement';
+  if (group !== activeGroup) {
+    activeGroup = group;
+    showGroup();
+  }
+}
+window.addEventListener('hashchange', showPlan);
+showPlan();
 </script>
 </body>
 </html>
